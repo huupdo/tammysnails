@@ -1,5 +1,7 @@
 import React from 'react';
 import PhoneIcon from './components/PhoneIcon';
+import MapPinIcon from './components/MapPinIcon';
+import ClockIcon from './components/ClockIcon';
 
 // Reusable Service Card Component
 const ServiceCard = ({ title, image, link }) => (
@@ -26,20 +28,26 @@ export default function App() {
       
       {/* 1. TOP ANNOUNCEMENT BAR */}
       {/* <div className="bg-stone-900 text-white py-2 text-[10px] md:text-xs uppercase tracking-[0.3em] text-center px-4">
-        Now Serving Pasadena & Silverlake • Open 7 Days A Week
+        Now Serving Open 7 Days A Week
       </div> */}
 
       {/* 2. STICKY NAVIGATION */}
-      <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-stone-100 px-6 py-4 flex justify-between items-center">
-        {/* <div className="text-2xl font-serif font-bold tracking-tighter uppercase">Maison</div> */}
-        <img src="/logo.png" alt="Tammy's Nails Logo" className="h-20 w-auto" />
-        <ul className="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-stone-500">
-          <li className="hover:text-stone-900 cursor-pointer">Home</li>
-          <li className="hover:text-stone-900 cursor-pointer">Services</li>
-          <li className="hover:text-stone-900 cursor-pointer">Gallery</li>
-          <li className="hover:text-stone-900 cursor-pointer">Contact</li>
-        </ul>
-        <a href="tel:+1234567890" className="bg-stone-900 text-white px-6 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">
+      <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-stone-100 px-6 py-4 flex justify-center items-center relative">
+        <div className="flex items-center gap-12">
+          <div className="items-center md:flex tracking-widest">
+            <img src="/logo.png" alt="Tammy's Nails Logo" className="h-20 w-auto" />
+          </div>
+          
+          <div className="text-2xl font-bold tracking-tighter text-stone-500"></div>
+          
+          <ul className="hidden md:flex gap-8 text-[14px] font-bold uppercase tracking-widest text-stone-500">
+            <li className="hover:text-stone-900 cursor-pointer">Home</li>
+            <li className="hover:text-stone-900 cursor-pointer">Services</li>
+            <li className="hover:text-stone-900 cursor-pointer">Gallery</li>
+            <li className="hover:text-stone-900 cursor-pointer">Contact</li>
+          </ul>
+        </div>
+        <a href="tel:+15302269462" className="absolute right-6 bg-stone-900 text-white px-6 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">
           Call to Book
         </a>
       </nav>
@@ -100,16 +108,10 @@ export default function App() {
       <section className="bg-white border-y border-stone-100 py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
           <div className="space-y-6">
-            <h3 className="font-serif text-3xl">Pasadena</h3>
-            <p className="text-stone-500 uppercase tracking-widest text-xs">850 E Green St, Pasadena, CA 91101</p>
-            <p className="text-stone-500 font-bold"><PhoneIcon /> 626-464-7197</p>
-            <p className="text-stone-400 text-sm">Mon-Sun: 9AM - 7PM</p>
-          </div>
-          <div className="space-y-6">
-            <h3 className="font-serif text-3xl">Silverlake</h3>
-            <p className="text-stone-500 uppercase tracking-widest text-xs">2474 Glendale, Los Angeles, CA 90039</p>
-            <p className="text-stone-500 font-bold"><PhoneIcon /> 323-522-3333</p>
-            <p className="text-stone-400 text-sm">Mon-Sun: 10AM - 7PM</p>
+            <h3 className="font-serif text-3xl">Tammy's Nails</h3>
+            <p className="text-stone-500 uppercase tracking-widest text-sm"><MapPinIcon /> 2907 Churn Crk Rd, Redding, CA 96002</p>
+            <p className="text-stone-500 text-sm"><PhoneIcon /> (530) 226-9462</p>
+            <p className="text-stone-500 text-sm"><ClockIcon /> Mon-Sat: 10AM - 7PM</p>
           </div>
         </div>
       </section>
