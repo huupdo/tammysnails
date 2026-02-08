@@ -1,4 +1,5 @@
 import React from 'react';
+import PhoneIcon from './components/PhoneIcon';
 
 // Reusable Service Card Component
 const ServiceCard = ({ title, image, link }) => (
@@ -101,13 +102,13 @@ export default function App() {
           <div className="space-y-6">
             <h3 className="font-serif text-3xl">Pasadena</h3>
             <p className="text-stone-500 uppercase tracking-widest text-xs">850 E Green St, Pasadena, CA 91101</p>
-            <p className="text-stone-500 font-bold">626-464-7197</p>
+            <p className="text-stone-500 font-bold"><PhoneIcon /> 626-464-7197</p>
             <p className="text-stone-400 text-sm">Mon-Sun: 9AM - 7PM</p>
           </div>
           <div className="space-y-6">
             <h3 className="font-serif text-3xl">Silverlake</h3>
             <p className="text-stone-500 uppercase tracking-widest text-xs">2474 Glendale, Los Angeles, CA 90039</p>
-            <p className="text-stone-500 font-bold">323-522-3333</p>
+            <p className="text-stone-500 font-bold"><PhoneIcon /> 323-522-3333</p>
             <p className="text-stone-400 text-sm">Mon-Sun: 10AM - 7PM</p>
           </div>
         </div>
