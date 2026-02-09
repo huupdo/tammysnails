@@ -2,6 +2,7 @@ import React from 'react';
 import PhoneIcon from './components/PhoneIcon';
 import MapPinIcon from './components/MapPinIcon';
 import ClockIcon from './components/ClockIcon';
+import { useRef } from 'react';
 
 // Reusable Service Card Component
 const ServiceCard = ({ title, image, link }) => (
@@ -23,6 +24,10 @@ const ServiceCard = ({ title, image, link }) => (
 );
 
 export default function App() {
+  const contactRef = useRef(null);
+  const galleryRef = useRef(null);
+  const servicesRef = useRef(null);
+
   return (
     <div className="min-h-screen bg-brand-beige text-stone-900 font-sans selection:bg-stone-200">
 
@@ -32,7 +37,7 @@ export default function App() {
       </div> */}
 
       {/* 2. STICKY NAVIGATION */}
-      <nav className="top-0 z-50 bg-black/80 backdrop-blur-md border-b border-stone-100 px-6 py-4 flex justify-center items-center relative">
+      <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-stone-100 px-6 py-4 flex justify-center items-center relative">
         <div className="flex items-center gap-12">
           <div className="items-center md:flex tracking-widest">
             <img src="/logo.png" alt="Tammy's Nails Logo" className="h-20 w-auto" />
@@ -41,10 +46,30 @@ export default function App() {
           <div className="text-2xl font-bold tracking-tighter text-stone-500"></div>
 
           <ul className="hidden md:flex gap-8 text-[14px] font-bold uppercase tracking-widest text-stone-500">
-            <li className="hover:text-stone-900 cursor-pointer">Home</li>
-            <li className="hover:text-stone-900 cursor-pointer">Services</li>
-            <li className="hover:text-stone-900 cursor-pointer">Gallery</li>
-            <li className="hover:text-stone-900 cursor-pointer">Contact</li>
+            <li className="hover:text-stone-900 cursor-pointer"><button onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}>
+              Home
+            </button></li>
+            <li className="hover:text-stone-900 cursor-pointer"><button className="btn" onClick={() => {
+              servicesRef.current?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }}>
+              Services
+            </button></li>
+            <li className="hover:text-stone-900"><button className="btn" onClick={() => {
+              galleryRef.current?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }}>
+              Gallery
+            </button></li>
+            <li className="hover:text-stone-900"><button className="btn" onClick={() => {
+              contactRef.current?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }}>
+              Contact
+            </button></li>
           </ul>
         </div>
         <a href="tel:+15302269462" className="absolute right-6 bg-stone-900 text-white px-6 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">
@@ -76,7 +101,7 @@ export default function App() {
       </header>
 
       {/* 4. SERVICES GRID */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      <section ref={servicesRef} className="py-24 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl mb-4">Our Nail Spa Services</h2>
           <p className="text-stone-500 max-w-xl mx-auto text-sm leading-relaxed">
@@ -104,8 +129,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. LOCATION INFO (Footer Pre-section) */}
-      {/*       <section className="bg-white border-y border-stone-100 py-20 px-6">
+      {/* 5. Gallery*/}
+      <section ref={galleryRef} className="bg-white border-y border-stone-100 py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
           <div className="space-y-6">
             <h3 className="font-serif text-3xl">Tammy's Nails</h3>
@@ -114,14 +139,15 @@ export default function App() {
             <p className="text-stone-500 text-sm"><ClockIcon /> Mon-Sat: 10AM - 7PM</p>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      <section class="bg-white dark:bg-gray-900">
+      {/* 6. LOCATION INFO (Footer Pre-section) */}
+      <section ref={contactRef} class="bg-white dark:bg-gray-900">
         <div class="container px-6 py-12 mx-auto">
           <div class="text-center mb-16">
             <h3 class="font-medium text-2xl text-blue-500 dark:text-blue-400">Contact us</h3>
-             <p class="text-gray-800 dark:text-gray-400">Experience a new standard of nail care in our boutique nail salon.
-                  Book your appointment today</p>
+            <p class="text-gray-800 dark:text-gray-400">Ready to experience a new standard of nail care in our boutique nail salon.
+              Book your appointment today</p>
           </div>
 
           <div class="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
