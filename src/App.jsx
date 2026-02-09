@@ -150,17 +150,15 @@ export default function App() {
               Book your appointment today</p>
           </div>
 
-          <div class="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
-            <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-1">
-              <div>
-                <h3 className="font-serif text-stone-500 text-3xl">Tammy's Nails</h3>
-                <p className="text-stone-500 tracking-widest text-sm"><MapPinIcon /> 2907 Churn Crk Rd, Redding, CA 96002</p>
-                <p className="text-stone-500 text-sm"><PhoneIcon /> (530) 226-9462</p>
-                <p className="text-stone-500 text-sm"><ClockIcon /> Mon-Sat: 10AM - 7PM</p>
-              </div>
+          <div className="grid grid-cols-1 gap-12 mt-10">
+            <div className="flex flex-col items-center text-center">
+              <h3 className="font-serif text-stone-500 text-3xl">Tammy's Nails</h3>
+              <p className="text-stone-500 tracking-widest text-sm"><MapPinIcon /> 2907 Churn Crk Rd, Redding, CA 96002</p>
+              <p className="text-stone-500 text-sm"><PhoneIcon /> (530) 226-9462</p>
+              <p className="text-stone-500 text-sm"><ClockIcon /> Mon-Sat: 10AM - 7PM</p>
             </div>
 
-            <div class="overflow-hidden rounded-lg lg:col-span-1 h-96 lg:h-auto">
+            <div className="overflow-hidden rounded-lg h-96 w-full">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6061.839582969197!2d-122.35803008412879!3d40.56544847503779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d2eca38b3997c5%3A0x74ce7f1f02ba2189!2sTammy&#39;s%20Nails%20-%20Nail%20Salon%20Redding%20CA!5e0!3m2!1sen!2sus!4v1770612118403!5m2!1sen!2sus" width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
