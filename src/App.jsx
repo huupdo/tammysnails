@@ -2,7 +2,8 @@ import React from 'react';
 import PhoneIcon from './components/PhoneIcon';
 import MapPinIcon from './components/MapPinIcon';
 import ClockIcon from './components/ClockIcon';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 
 // Reusable Service Card Component
 const ServiceCard = ({ title, image, link }) => (
@@ -27,6 +28,7 @@ export default function App() {
   const contactRef = useRef(null);
   const galleryRef = useRef(null);
   const servicesRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="bg-white dark:bg-neutral-950 text-gray-800 dark:text-neutral-100 antialiased">
@@ -38,46 +40,70 @@ export default function App() {
 
       {/* 2. STICKY NAVIGATION */}
       <nav className="bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 sticky top-0 z-50">
-        <div className="mx-auto px-6 py-1 max-w-7xl">
-          <div className="md:flex-row items-center justify-between flex flex-col gap-4">
-            <div class="md:flex-1 md:flex md:justify-start">
+        <div className="mx-auto px-6 py-2 max-w-7xl">
+          <div className="flex items-center justify-between">
+            <div className="flex-shrink-0">
               <div class="text-2xl font-bold text-stone-700 dark:text-stone-300">
-                <img src="/logo.png" alt="Tammy's Nails Logo" className="h-20 w-auto" />
+                <img src="/logo.png" alt="Tammy's Nails Logo" className="h-16 w-auto md:h-20" />
                 {/* <span class="text-stone-600 dark:text-stone-400">Your</span>
                 Brand */}
               </div>
             </div>
-            <div className="items-center md:gap-6 flex gap-2">
-              <button class="btn px-4 py-2 text-2xl font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}>
+            
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center gap-4">
+              <button className="btn px-3 py-2 text-lg font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}>
                 Home
               </button>
-              <button className="btn px-4 py-2 text-2xl font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
+              <button className="btn px-3 py-2 text-lg font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
                 servicesRef.current?.scrollIntoView({
                   behavior: 'smooth'
                 });
               }}>
                 Services
               </button>
-              <button className="btn px-4 py-2 text-2xl font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
+              <button className="btn px-3 py-2 text-lg font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
                 galleryRef.current?.scrollIntoView({
                   behavior: 'smooth'
                 });
               }}>
                 Gallery
               </button>
-              <button className="btn px-4 py-2 text-2xl font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
+              <button className="btn px-3 py-2 text-lg font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
                 contactRef.current?.scrollIntoView({
                   behavior: 'smooth'
                 });
               }}>
                 Contact
               </button>
-              <a href="tel:+15302269462" className="absolute right-6 bg-stone-900 text-white px-6 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">
+              <a href="tel:+15302269462" className="bg-stone-900 text-white px-6 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">
                 Call to Book
               </a>
             </div>
-            <div class="md:block md:flex-1 hidden"></div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button
+                className="text-stone-700 dark:text-stone-300 p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <RxCross1 size={24} /> : <RxHamburgerMenu size={24} />}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Menu Dropdown */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 flex flex-col gap-4 items-center border-t border-neutral-200 dark:border-neutral-800 pt-4">
+              <button className="text-lg font-medium text-gray-700 dark:text-neutral-300" onClick={() => { setIsMenuOpen(false); window.scroll({ top: 0, behavior: 'smooth' }); }}>Home</button>
+              <button className="text-lg font-medium text-gray-700 dark:text-neutral-300" onClick={() => { setIsMenuOpen(false); servicesRef.current?.scrollIntoView({ behavior: 'smooth' }); }}>Services</button>
+              <button className="text-lg font-medium text-gray-700 dark:text-neutral-300" onClick={() => { setIsMenuOpen(false); galleryRef.current?.scrollIntoView({ behavior: 'smooth' }); }}>Gallery</button>
+              <button className="text-lg font-medium text-gray-700 dark:text-neutral-300" onClick={() => { setIsMenuOpen(false); contactRef.current?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</button>
+              <a href="tel:+15302269462" className="bg-stone-900 text-white px-6 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-stone-700 transition w-full text-center">
+                Call to Book
+              </a>
+            </div>
+          )}
         </div>
       </nav>
 
