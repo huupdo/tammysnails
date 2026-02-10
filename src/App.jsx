@@ -29,7 +29,7 @@ export default function App() {
   const servicesRef = useRef(null);
 
   return (
-    <div className="min-h-screen bg-brand-beige text-stone-900 font-sans selection:bg-stone-200">
+    <div className="bg-white dark:bg-neutral-950 text-gray-800 dark:text-neutral-100 antialiased">
 
       {/* 1. TOP ANNOUNCEMENT BAR */}
       {/* <div className="bg-stone-900 text-white py-2 text-[10px] md:text-xs uppercase tracking-[0.3em] text-center px-4">
@@ -37,44 +37,48 @@ export default function App() {
       </div> */}
 
       {/* 2. STICKY NAVIGATION */}
-      <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-stone-100 px-6 py-4 flex justify-center items-center relative">
-        <div className="flex items-center gap-12">
-          <div className="items-center md:flex tracking-widest">
-            <img src="/logo.png" alt="Tammy's Nails Logo" className="h-20 w-auto" />
+      <nav className="bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 sticky top-0 z-50">
+        <div className="mx-auto px-6 py-1 max-w-7xl">
+          <div className="md:flex-row items-center justify-between flex flex-col gap-4">
+            <div class="md:flex-1 md:flex md:justify-start">
+              <div class="text-2xl font-bold text-stone-700 dark:text-stone-300">
+                <img src="/logo.png" alt="Tammy's Nails Logo" className="h-20 w-auto" />
+                {/* <span class="text-stone-600 dark:text-stone-400">Your</span>
+                Brand */}
+              </div>
+            </div>
+            <div className="items-center md:gap-6 flex gap-2">
+              <button class="btn px-4 py-2 text-2xl font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}>
+                Home
+              </button>
+              <button className="btn px-4 py-2 text-2xl font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
+                servicesRef.current?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }}>
+                Services
+              </button>
+              <button className="btn px-4 py-2 text-2xl font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
+                galleryRef.current?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }}>
+                Gallery
+              </button>
+              <button className="btn px-4 py-2 text-2xl font-medium text-gray-700 rounded-lg dark:text-neutral-300 hover:text-stone-700 dark:hover:text-stone-300 transition-colors hover:bg-stone-50 dark:hover:bg-stone-900/30" onClick={() => {
+                contactRef.current?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }}>
+                Contact
+              </button>
+              <a href="tel:+15302269462" className="absolute right-6 bg-stone-900 text-white px-6 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">
+                Call to Book
+              </a>
+            </div>
+            <div class="md:block md:flex-1 hidden"></div>
           </div>
-
-          <div className="text-2xl font-bold tracking-tighter text-stone-500"></div>
-
-          <ul className="hidden md:flex gap-8 text-[14px] font-bold uppercase tracking-widest text-stone-500">
-            <li className="hover:text-stone-900 cursor-pointer"><button onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}>
-              Home
-            </button></li>
-            <li className="hover:text-stone-900 cursor-pointer"><button className="btn" onClick={() => {
-              servicesRef.current?.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }}>
-              Services
-            </button></li>
-            <li className="hover:text-stone-900"><button className="btn" onClick={() => {
-              galleryRef.current?.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }}>
-              Gallery
-            </button></li>
-            <li className="hover:text-stone-900"><button className="btn" onClick={() => {
-              contactRef.current?.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }}>
-              Contact
-            </button></li>
-          </ul>
         </div>
-        <a href="tel:+15302269462" className="absolute right-6 bg-stone-900 text-white px-6 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">
-          Call to Book
-        </a>
       </nav>
 
       {/* 3. HERO SECTION */}
