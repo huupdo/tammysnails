@@ -52,7 +52,7 @@ export default function App() {
       <nav className="top-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-950/80">
         <div className="mx-auto max-w-7xl px-6 py-2">
           <div className="flex items-center justify-between">
-            <div className="shrink-0">
+            <div className="flex flex-1 shrink-0 justify-start">
               <div className="text-2xl font-bold text-stone-700 dark:text-stone-300">
                 <img src="/logo.png" alt="Tammy's Nails Logo" className="h-16 w-auto md:h-20" />
                 {/* <span className="text-stone-600 dark:text-stone-400">Your</span>
@@ -98,20 +98,22 @@ export default function App() {
               >
                 Contact
               </button>
-              <div class="hidden w-32 md:block md:flex-1 lg:block lg:flex-1"></div>
+            </div>
+
+            <div className="flex flex-1 items-center justify-end gap-4">
               <a
                 href="tel:+15302269462"
-                className="rounded-lg bg-stone-900 px-6 py-2 text-[11px] font-bold tracking-widest text-white uppercase transition hover:bg-stone-700"
+                className="hidden rounded-lg bg-stone-900 px-6 py-2 text-[11px] font-bold tracking-widest text-white uppercase transition hover:bg-stone-700 md:block"
               >
                 Call to Book
               </a>
-            </div>
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <button className="p-2 text-stone-700 dark:text-stone-300" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? <RxCross1 size={24} /> : <RxHamburgerMenu size={24} />}
-              </button>
+              {/* Mobile Menu Button */}
+              <div className="md:hidden">
+                <button className="p-2 text-stone-700 dark:text-stone-300" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                  {isMenuOpen ? <RxCross1 size={24} /> : <RxHamburgerMenu size={24} />}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -385,50 +387,75 @@ export default function App() {
       </section>
 
       {/* 6. LOCATION INFO (Footer Pre-section) */}
-      <section ref={contactRef} className="bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-6 py-12">
-          <div className="mb-16 text-center">
-            <h3 className="text-2xl font-medium text-blue-500 dark:text-blue-400">Contact us</h3>
-            <p className="text-gray-800 dark:text-gray-400">
-              Ready to experience a new standard of nail care in our boutique nail salon. Book your appointment today
+      <section
+        ref={contactRef}
+        className="relative overflow-hidden bg-neutral-50 py-8 dark:bg-neutral-900/50"
+        id="contact"
+      >
+        <div class="mx-auto max-w-5xl px-6">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl dark:text-neutral-100">Contact Us</h2>
+            <p class="mx-auto max-w-2xl text-lg text-gray-700/80 dark:text-neutral-300/80">
+              Ready to experience a new standard of nail care in our boutique nail salon.
+              <br /> Book your appointment today
             </p>
           </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-12">
-            <div className="flex flex-col items-center text-center">
-              <h3 className="font-serif text-3xl text-stone-500">Tammy's Nails</h3>
-              <p className="text-sm tracking-widest text-stone-500">
-                <MapPinIcon /> 2907 Churn Crk Rd, Redding, CA 96002
-              </p>
-              <p className="text-sm text-stone-500">
-                <PhoneIcon /> (530) 226-9462
-              </p>
-              <p className="text-sm text-stone-500">
-                <ClockIcon /> Mon-Sat: 10AM - 7PM
-              </p>
+          <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            <div class="space-y-6">
+              <div class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-xl dark:border-neutral-800 dark:bg-neutral-950">
+                <div class="mb-6 flex items-start gap-4">
+                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-stone-200 bg-stone-100 dark:border-stone-700 dark:bg-stone-900/50">
+                    <img src="/logo.png" alt="Tammy's Nails Logo" />
+                  </div>
+                  <div>
+                    <h3 class="mb-2 text-lg font-semibold text-gray-800 dark:text-neutral-100">Tammy's Nails</h3>
+                    <p class="text-gray-600 dark:text-neutral-400">
+                      <MapPinIcon />
+                      <span>907 Churn Crk Rd, Redding, CA 96002</span>
+                    </p>
+                    <p className="text-gray-600 dark:text-neutral-400">
+                      <PhoneIcon /> (530) 226-9462
+                    </p>
+                    <p className="text-gray-600 dark:text-neutral-400">
+                      <ClockIcon /> Mon-Sat: 10AM - 7PM
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div className="h-96 w-full overflow-hidden rounded-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6061.839582969197!2d-122.35803008412879!3d40.56544847503779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d2eca38b3997c5%3A0x74ce7f1f02ba2189!2sTammy&#39;s%20Nails%20-%20Nail%20Salon%20Redding%20CA!5e0!3m2!1sen!2sus!4v1770612118403!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                frameborder="0"
-                title="map"
-                marginheight="0"
-                marginwidth="0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div class="h-full min-h-75 lg:min-h-100">
+              <div class="h-full overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xl dark:border-neutral-800 dark:bg-neutral-950">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6061.839582969197!2d-122.35803008412879!3d40.56544847503779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d2eca38b3997c5%3A0x74ce7f1f02ba2189!2sTammy&#39;s%20Nails%20-%20Nail%20Salon%20Redding%20CA!5e0!3m2!1sen!2sus!4v1770612118403!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  frameborder="0"
+                  title="map"
+                  marginheight="0"
+                  marginwidth="0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      <footer className="bg-white dark:bg-gray-900">
-        <div className="mx-auto space-y-4 p-6 text-center sm:space-y-0">
+      <footer className="border-t border-neutral-800 bg-neutral-900 py-8 text-gray-300 dark:border-neutral-900 dark:bg-neutral-950 dark:text-neutral-400">
+        <div className="flex flex-col items-center justify-between gap-4 text-sm text-gray-500 md:flex-row dark:text-neutral-600">
           <p className="text-sm text-gray-600 dark:text-gray-300">©2018 Tammy's Nails. All Rights Reserved.</p>
+          <div class="flex gap-6">
+            <a href="/home" class="transition-colors hover:text-stone-400 dark:hover:text-stone-400">
+              Privacy Policy
+            </a>
+            <a href="/home" class="transition-colors hover:text-stone-400 dark:hover:text-stone-400">
+              Terms of Service
+            </a>
+            <a href="/home" class="transition-colors hover:text-stone-400 dark:hover:text-stone-400">
+              Cookie Policy
+            </a>
+          </div>
         </div>
       </footer>
     </div>
