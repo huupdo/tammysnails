@@ -183,28 +183,23 @@ export default function App() {
       </header> */}
 
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden" id="home">
-        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {/* <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute -top-32 -left-32 h-[60vh] w-[60vh] rounded-full bg-linear-to-br from-stone-200 via-stone-100 to-stone-300 opacity-20 blur-2xl dark:opacity-0"></div>
           <div className="absolute right-10 -bottom-20 h-[40vh] w-[50vh] rounded-full bg-linear-to-br from-stone-300 via-stone-200 to-stone-100 opacity-40 blur-3xl dark:opacity-0"></div>
           <div className="absolute top-28 left-1/4 h-[35vh] w-[45vh] rounded-full bg-linear-to-br from-stone-300 via-stone-200 to-stone-100 opacity-60 blur-3xl dark:h-[28vh] dark:from-stone-600 dark:via-stone-500 dark:to-stone-400 dark:opacity-20"></div>
-        </div>
+        </div> */}
         <div className="absolute inset-0 -z-20">
-          <img
-            alt="Luxury Interior"
-            src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&q=80&w=2000"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-white/70 backdrop-blur-xs dark:bg-neutral-900/40"></div>
+          <img alt="Beautiful nails gel" src="/bg.png" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-white/70 dark:bg-neutral-400/30"></div>
         </div>
-        <div className="relative z-10 mx-auto max-w-5xl px-6 py-20 text-center">
+        <div className="relative z-10 mx-auto max-w-5xl px-6 py-20 text-left">
           <div className="mb-6">
-            <span className="px-4 py-2 text-2xl font-medium text-stone-700 md:text-4xl dark:text-stone-200">
+            <span className="px-4 py-2 font-serif text-2xl text-stone-400 italic md:text-4xl dark:text-stone-200">
               Welcome to Tammy's
             </span>
           </div>
           <h1 className="mb-8 font-serif text-3xl leading-tight md:text-5xl">
-            Experience nail care with non-toxic products and trending designs tailored to your{' '}
-            <span className="italic">unique style.</span>
+            Experience premium nail care with non-toxic ingredients and trending styles tailored to you.
           </h1>
         </div>
       </section>
