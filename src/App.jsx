@@ -182,24 +182,22 @@ export default function App() {
         </div>
       </header> */}
 
-      <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden" id="home">
-        {/* <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <section className="relative isolate flex min-h-screen items-start justify-start overflow-hidden pt-32" id="home">
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute -top-32 -left-32 h-[60vh] w-[60vh] rounded-full bg-linear-to-br from-stone-200 via-stone-100 to-stone-300 opacity-20 blur-2xl dark:opacity-0"></div>
           <div className="absolute right-10 -bottom-20 h-[40vh] w-[50vh] rounded-full bg-linear-to-br from-stone-300 via-stone-200 to-stone-100 opacity-40 blur-3xl dark:opacity-0"></div>
           <div className="absolute top-28 left-1/4 h-[35vh] w-[45vh] rounded-full bg-linear-to-br from-stone-300 via-stone-200 to-stone-100 opacity-60 blur-3xl dark:h-[28vh] dark:from-stone-600 dark:via-stone-500 dark:to-stone-400 dark:opacity-20"></div>
-        </div> */}
+        </div>
         <div className="absolute inset-0 -z-20">
           <img alt="Beautiful nails gel" src="/bg.png" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-white/70 dark:bg-neutral-400/30"></div>
+          <div className="absolute inset-0 bg-white/40 dark:bg-neutral-400/30"></div>
         </div>
-        <div className="relative z-10 mx-auto max-w-5xl px-6 py-20 text-left">
-          <div className="mb-6">
-            <span className="px-4 py-2 font-serif text-2xl text-stone-400 italic md:text-4xl dark:text-stone-200">
-              Welcome to Tammy's
-            </span>
+        <div className="relative z-10 max-w-3xl px-6 py-10 text-left">
+          <div className="mb-4">
+            <span className="px-4 py-2 font-serif text-3xl leading-tight md:text-4xl">Welcome to Tammy's</span>
           </div>
-          <h1 className="mb-8 font-serif text-3xl leading-tight md:text-5xl">
-            Experience premium nail care with non-toxic ingredients and trending styles tailored to you.
+          <h1 className="mb-8 font-serif text-2xl text-yellow-600 italic md:text-5xl dark:text-stone-200">
+            Experience premium nail care with non-toxic products and trending styles tailored to you.
           </h1>
         </div>
       </section>
@@ -224,13 +222,13 @@ export default function App() {
               <ServiceCard title="Manicures" image="/nail 1.jpg" alt="Manicures" />
             </div>
             <div className="grid grid-rows-[1fr_auto] rounded-2xl border border-neutral-200/70 bg-white/70 p-2 shadow-xl ring-1 ring-neutral-200/50 transition-shadow duration-300 hover:shadow-2xl dark:border-neutral-800/70 dark:bg-neutral-950 dark:ring-neutral-700/50">
-              <ServiceCard title="Pedicure" image="/nail 1.jpg" alt="Manicures" />
+              <ServiceCard title="Pedicure" image="/pedicure.png" alt="Manicures" />
             </div>
             <div className="grid grid-rows-[1fr_auto] rounded-2xl border border-neutral-200/70 bg-white/70 p-2 shadow-xl ring-1 ring-neutral-200/50 transition-shadow duration-300 hover:shadow-2xl dark:border-neutral-800/70 dark:bg-neutral-950 dark:ring-neutral-700/50">
-              <ServiceCard title="Eye Brows" image="/nail 1.jpg" alt="Manicures" />
+              <ServiceCard title="Eye Brows" image="/eyebrow.png" alt="Manicures" />
             </div>
             <div className="grid grid-rows-[1fr_auto] rounded-2xl border border-neutral-200/70 bg-white/70 p-2 shadow-xl ring-1 ring-neutral-200/50 transition-shadow duration-300 hover:shadow-2xl dark:border-neutral-800/70 dark:bg-neutral-950 dark:ring-neutral-700/50">
-              <ServiceCard title="Lashes" image="/nail 1.jpg" alt="Manicures" />
+              <ServiceCard title="Lashes" image="/lashes.png" alt="Manicures" />
             </div>
           </div>
         </div>
@@ -274,11 +272,7 @@ export default function App() {
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 <div class="relative min-w-full">
-                  <img
-                    alt="Gallery Image 1"
-                    src="https://placehold.co/1200x600/78716c/ffffff?text=Project+1"
-                    class="h-100 w-full object-cover md:h-150"
-                  />
+                  <img alt="Gallery Image 1" src="/gallery 1.png" class="h-100 w-full object-cover md:h-150" />
                   {/* <div class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 via-transparent to-transparent">
                     <div class="p-8">
                       <h3 class="mb-2 text-2xl font-bold text-white">Innovative Web Platform</h3>
@@ -287,56 +281,40 @@ export default function App() {
                   </div> */}
                 </div>
                 <div class="relative min-w-full">
-                  <img
-                    alt="Gallery Image 2"
-                    src="https://placehold.co/1200x600/57534e/ffffff?text=Project+2"
-                    class="h-100 w-full object-cover md:h-150"
-                  />
+                  <img alt="Gallery Image 2" src="/gallery 2.jpg" class="h-100 w-full object-cover md:h-150" />
                   <div class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 via-transparent to-transparent">
-                    <div class="p-8">
+                    {/* <div class="p-8">
                       <h3 class="mb-2 text-2xl font-bold text-white">Mobile App Design</h3>
                       <p class="text-sm text-gray-200">Beautiful interface for productivity app</p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div class="relative min-w-full">
-                  <img
-                    alt="Gallery Image 3"
-                    src="https://placehold.co/1200x600/a8a29e/ffffff?text=Project+3"
-                    class="h-100 w-full object-cover md:h-150"
-                  />
-                  <div class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 via-transparent to-transparent">
+                  <img alt="Gallery Image 3" src="gallery 3.png" class="h-100 w-full object-cover md:h-150" />
+                  {/* <div class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 via-transparent to-transparent">
                     <div class="p-8">
                       <h3 class="mb-2 text-2xl font-bold text-white">Corporate Branding</h3>
                       <p class="text-sm text-gray-200">Complete brand identity and website redesign</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div class="relative min-w-full">
-                  <img
-                    alt="Gallery Image 4"
-                    src="https://placehold.co/1200x600/44403c/ffffff?text=Project+4"
-                    class="h-100 w-full object-cover md:h-150"
-                  />
-                  <div class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 via-transparent to-transparent">
+                  <img alt="Gallery Image 4" src="/gallery 4.png" class="hfull object-cover md:h-150" />
+                  {/* <div class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 via-transparent to-transparent">
                     <div class="p-8">
                       <h3 class="mb-2 text-2xl font-bold text-white">Cloud Infrastructure</h3>
                       <p class="text-sm text-gray-200">Scalable cloud migration and deployment</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div class="relative min-w-full">
-                  <img
-                    alt="Gallery Image 5"
-                    src="https://placehold.co/1200x600/292524/ffffff?text=Project+5"
-                    class="h-100 w-full object-cover md:h-150"
-                  />
-                  <div class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 via-transparent to-transparent">
+                  <img alt="Gallery Image 5" src="/gallery 5.png" class="h-full object-center md:h-150" />
+                  {/* <div class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 via-transparent to-transparent">
                     <div class="p-8">
                       <h3 class="mb-2 text-2xl font-bold text-white">Marketing Campaign</h3>
                       <p class="text-sm text-gray-200">Multi-channel digital marketing success</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -438,9 +416,9 @@ export default function App() {
         </div>
       </section>
       <footer className="border-t border-neutral-800 bg-neutral-900 py-8 text-gray-300 dark:border-neutral-900 dark:bg-neutral-950 dark:text-neutral-400">
-        <div className="flex flex-col items-center justify-between gap-4 text-sm text-gray-500 md:flex-row dark:text-neutral-600">
+        <div className="flex items-center justify-center gap-4 text-sm text-gray-500 md:flex-row dark:text-neutral-600">
           <p className="text-sm text-gray-600 dark:text-gray-300">©2018 Tammy's Nails. All Rights Reserved.</p>
-          <div class="flex gap-6">
+          {/* <div class="flex gap-6">
             <a href="/home" class="transition-colors hover:text-stone-400 dark:hover:text-stone-400">
               Privacy Policy
             </a>
@@ -450,7 +428,7 @@ export default function App() {
             <a href="/home" class="transition-colors hover:text-stone-400 dark:hover:text-stone-400">
               Cookie Policy
             </a>
-          </div>
+          </div> */}
         </div>
       </footer>
     </div>
